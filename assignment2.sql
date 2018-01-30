@@ -4,7 +4,7 @@
 	@author Akshay
 */
 --- Assignment solutions are at the bottom of the file
---- input values are in reqt format, just copy-paste at sql prompt
+--- input values are in required format, just copy-paste at sql prompt when inserting into table
 
 create table client_master_new(
 	client_no varchar2(6) primary key,
