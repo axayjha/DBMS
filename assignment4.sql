@@ -80,4 +80,5 @@ select colour from boats_tab where b_id= (select b_id from reserves_tab where s_
 select * from sailors_tab where s_id=(select s_id from reserves_tab where to_char(to_date(day, 'dd/mm/yyyy'), 'DAY') = 'Monday');
 
 select * from boats_tab where (colour = 'Red' or colour = 'Green');
+delete from reserves_tab where s_id = (select s_id from sailors_tab where age>60);
 delete from sailors_tab where age>60;

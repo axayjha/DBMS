@@ -58,9 +58,10 @@ select MAX(EMPNO) as MAX, MIN(EMPNO) as MIN, SUM(EMPNO) as SUM, AVG(EMPNO) as AV
 select MAX(EMPNO) as MAX, MIN(EMPNO) as MIN, SUM(EMPNO) as SUM, AVG(EMPNO) as AVG from EMP_303 group by JOB;
 select count(*) "NUMBER OF MANAGERS" from EMP_303 where JOB = 'Manager';
 select * from EMP_303 where HIREDATE > '01-JAN-1980';
-select MAX(SAL) from EMP_303 where JOB = 'Salesman';
+select ename from emp where sal=(select max(sal) from emp where job='salesman' group by job )
 select MIN(SAL) from EMP_303 where JOB = 'Clerk';
 
 select * from EMP_303 where SAL > (select SAL from EMP_303 where ENAME like 'Turner');
 select DEPT_NAME from (select * from EMP_303 where ENAME like 'Turner');
 select DEPT_NAME from EMP_303 where SAL  = (select MIN(SAL) from EMP_303);
+
